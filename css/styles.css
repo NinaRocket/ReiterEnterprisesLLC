@@ -499,7 +499,7 @@ input:focus,textarea:focus{outline:2px solid transparent;box-shadow:var(--ring)}
 
 .hero-notary{
   background:
-   linear-gradient(180deg, rgba(11, 11, 11, .45) 0%, rgb(11 11 11 / 86%) 60%, rgba(11, 11, 11, .90) 100%), url(../assets/img/reiter2.jpg) center / cover no-repeat
+   linear-gradient(180deg, rgba(11, 11, 11, .45) 0%, rgb(11 11 11 / 86%) 60%, rgba(11, 11, 11, .90) 100%), url("../assets/img/reiter2.jpg") center / cover no-repeat
 }
 
 .notary-details{
