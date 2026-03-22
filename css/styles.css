@@ -237,6 +237,46 @@ input:focus,textarea:focus{outline:2px solid transparent;box-shadow:var(--ring)}
     margin: 0;
   }
 }
+.service-link-card{
+  display:block;
+  color:inherit;
+  text-decoration:none;
+  transition:transform .18s ease, background .18s ease;
+}
+
+.service-link-card .container{
+  border-radius:18px;
+  transition:box-shadow .18s ease, transform .18s ease, background .18s ease;
+}
+
+.service-link-card:hover .container,
+.service-link-card:focus-visible .container{
+  box-shadow:0 12px 28px rgba(0,0,0,.08);
+}
+
+.service-link-card:hover .service-media,
+.service-link-card:focus-visible .service-media{
+  transform:translateY(-2px);
+}
+
+.service-link-card .service-media{
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+
+.service-link-card:focus-visible{
+  outline:none;
+}
+
+.service-link-card:focus-visible .container{
+  box-shadow:0 0 0 .2rem rgba(215,183,122,.35);
+}
+
+.service-inline-link{
+  color:#79064b;
+  font-weight:600;
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
 
 /* =========================
    SERVICES – single pattern
@@ -319,6 +359,8 @@ input:focus,textarea:focus{outline:2px solid transparent;box-shadow:var(--ring)}
 .section.service.reverse .service-media::before{ right:-24px; left:auto; bottom:-24px; }
 .section.service.reverse .service-media::after{ right:-18px; left:auto; bottom:-18px; }
 
+
+/* photography gallery  */
 /* mobile: stack media → copy → aside */
 @media (max-width: 992px){
   .service-grid{
@@ -349,4 +391,305 @@ input:focus,textarea:focus{outline:2px solid transparent;box-shadow:var(--ring)}
   .service-media{ max-width: none; place-self: stretch; }
   .service-media::before,
   .service-media::after{ display: none; } /* cleaner on small screens */
+}
+
+/* Gallery */
+/* Gallery */
+.section.gallery .welcome-title {
+  margin-bottom: 1rem;
+}
+
+#galleryCarousel {
+  position: relative;
+}
+
+#galleryCarousel .carousel-inner {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+/* Main gallery image */
+#galleryCarousel .gallery-main-image {
+  display: block;
+  width: 100%;
+  height: 520px;
+  object-fit: contain;
+  object-position: center;
+  background: #111;
+}
+
+/* Arrow controls */
+#galleryCarousel .carousel-control-prev,
+#galleryCarousel .carousel-control-next {
+  width: 56px;
+}
+
+#galleryCarousel .carousel-control-prev-icon,
+#galleryCarousel .carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.45);
+  border-radius: 50%;
+  padding: 1.25rem;
+  background-size: 55% 55%;
+}
+
+/* Thumbnails */
+#gallery .thumb {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  outline-offset: 2px;
+  border-radius: .75rem;
+  overflow: hidden;
+}
+
+#gallery .thumb img {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+  border-radius: .75rem;
+  opacity: .75;
+  transition: transform .15s ease, opacity .15s ease, box-shadow .15s ease;
+}
+
+#gallery .thumb:hover img,
+#gallery .thumb:focus img {
+  opacity: .95;
+  transform: scale(1.02);
+}
+
+#gallery .thumb.active img,
+#gallery .thumb[aria-current="true"] img {
+  opacity: 1;
+  box-shadow: 0 0 0 .2rem rgba(0,0,0,.12);
+}
+
+/* Responsive tweaks */
+@media (max-width: 992px) {
+  #galleryCarousel .gallery-main-image {
+    height: 420px;
+  }
+
+  #gallery .thumb img {
+    height: 95px;
+  }
+}
+
+@media (max-width: 768px) {
+  #galleryCarousel .gallery-main-image {
+    height: 300px;
+  }
+
+  #galleryCarousel .carousel-control-prev,
+  #galleryCarousel .carousel-control-next {
+    width: 44px;
+  }
+
+  #gallery .thumb img {
+    height: 80px;
+  }
+}
+
+
+/* =========================
+   NOTARY PAGE
+   ========================= */
+
+.hero-notary{
+  background:
+    linear-gradient(180deg, rgba(11,11,11,.45) 0%, rgba(11,11,11,.65) 60%, rgba(11,11,11,.90) 100%),
+    url("../assets/img/notary.jpg") center / cover no-repeat;
+}
+
+.notary-details{
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.notary-cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+  gap:18px;
+  margin-top:24px;
+}
+
+.notary-card{
+  background:#ffffff;
+  border:1px solid #ececec;
+  border-radius:14px;
+  padding:24px;
+  box-shadow:0 10px 24px rgba(0,0,0,.06);
+}
+
+.notary-card h3{
+  margin-bottom:10px;
+  color:#111;
+}
+
+.notary-card p{
+  margin:0;
+  color:#4a4f56;
+}
+
+.faq-accordion{
+  margin-top:24px;
+}
+
+.faq-accordion .accordion-item{
+  border:1px solid #e9e9e9;
+  border-radius:12px !important;
+  overflow:hidden;
+  margin-bottom:12px;
+  box-shadow:0 8px 18px rgba(0,0,0,.04);
+}
+
+.faq-accordion .accordion-button{
+  background:#fff;
+  color:#222;
+  font-weight:600;
+  box-shadow:none !important;
+}
+
+.faq-accordion .accordion-button:not(.collapsed){
+  background:#fff8ee;
+  color:#111;
+}
+
+.faq-accordion .accordion-body{
+  color:#4a4f56;
+  background:#fff;
+}
+
+.notary-cta{
+  background:#111;
+  color:#f3f3f3;
+}
+
+.notary-cta-box{
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:18px;
+  padding:32px;
+  display:flex;
+  justify-content:space-between;
+  gap:24px;
+  align-items:center;
+  background:
+    linear-gradient(135deg, rgba(245,166,55,.10), rgba(255,255,255,.03));
+}
+
+.notary-cta-box h2{
+  margin:0 0 10px;
+  font-family:"Playfair Display", Georgia, serif;
+}
+
+.notary-cta-box p{
+  margin:0;
+  color:#d8d8d8;
+}
+
+.notary-cta-eyebrow{
+  font-size:.85rem;
+  margin-bottom:10px;
+}
+
+.notary-cta-actions{
+  flex-shrink:0;
+}
+
+.btn-dark-outline{
+  color:#fff;
+  border-color:#f5a637;
+}
+
+.btn-dark-outline:hover{
+  background:rgba(245,166,55,.14);
+  color:#fff;
+}
+
+@media (max-width: 768px){
+  .notary-cta-box{
+    padding:24px;
+    flex-direction:column;
+    align-items:flex-start;
+  }
+}
+
+.notary-list{
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.notary-list li{
+  margin-bottom: 14px;
+  color: #4a4f56;
+}
+
+.notary-list li:last-child{
+  margin-bottom: 0;
+}
+
+.notary-list strong{
+  color: #111;
+}
+/* =========================
+   PHOTOGRAPHY PAGE
+   ========================= */
+
+.hero-photography{
+  background:
+    linear-gradient(180deg, rgba(11,11,11,.45) 0%, rgba(11,11,11,.65) 60%, rgba(11,11,11,.90) 100%),
+    url("../assets/img/abchair.png") center 30% / cover no-repeat;
+}
+
+.photography-details{
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+/* =========================
+   OFFICIANT PAGE
+   ========================= */
+
+.hero-officiant{
+  background:
+    linear-gradient(180deg, rgba(11,11,11,.45) 0%, rgba(11,11,11,.65) 60%, rgba(11,11,11,.90) 100%),
+    url("../assets/img/weddaisle.jpg") center / cover no-repeat;
+}
+
+.officiant-details{
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.officiant-gallery {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+ 
+#officiantCarousel .gallery-main-image {
+  display: block;
+  width: 100%;
+  height: 520px;
+  object-fit: contain;
+  object-position: center;
+  background: #111;
+}
+
+.gallery-image-wrap{
+  position: relative;
+}
+
+.photo-credit{
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  display: inline-block;
+  padding: 6px 10px;
+  font-size: 0.8rem;
+  line-height: 1;
+  color: #fff;
+  background: rgba(0,0,0,.55);
+  border-radius: 999px;
+  backdrop-filter: blur(3px);
 }
